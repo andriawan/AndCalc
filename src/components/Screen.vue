@@ -1,9 +1,12 @@
 <template>
     <div class="form-group">
-      <input type="email" 
+      <input 
+        :value="external"
+        type="number" 
         class="form-control form-control-lg"
         id="exampleInputEmail1" 
-        aria-describedby="emailHelp" 
+        aria-describedby="emailHelp"
+        @keyup="redefine($event.target.value)"
       >
     </div>
 </template>
@@ -11,11 +14,14 @@
 <script>
 export default {
   name: "Screen",
+  props: ["external"],
   data() {
-    return {
-      banner: "Welcome to Andriawan Mini Calculator",
-      sub_banner: "First Open Project in Vue"
-    };
+    return {};
+  },
+  methods: {
+    redefine(data) {
+      this.$emit("on_screen_change", data);
+    }
   }
 };
 </script>

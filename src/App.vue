@@ -3,9 +3,9 @@
   <div id="app">
     <AndHeader :banner="header_banner" :sub_banner="sub_header_banner">
     </AndHeader>
-    <AndContent :app_title="app.name" :app_version="app.version">
+    <AndContent :optional="digit" :app_title="app.name" :app_version="app.version">
     </AndContent>
-    <AndFooter @transfer="logMex" :banner="footer_banner" :link="footer_link">
+    <AndFooter @transfer="logMe" :banner="footer_banner" :link="footer_link">
     </AndFooter>
   </div>
 </div>
@@ -21,15 +21,16 @@ import "../node_modules/bootstrap/scss/bootstrap.scss";
 export default {
   data() {
     return {
-      app : {
-        name : "AndCalculator",
-        version : 'v1',
-        year : moment().format("YYYY")
+      app: {
+        name: "AndCalculator",
+        version: "v1",
+        year: moment().format("YYYY")
       },
       header_banner: "Welcome to Andriawan Mini Calculator",
       sub_header_banner: "First Open Project in Vue",
       footer_banner: "Andriawan",
-      footer_link: "https://irwan.andriawan.com"
+      footer_link: "https://irwan.andriawan.com",
+      digit : 0
     };
   },
   // Component dapat ditulis singkat
@@ -44,8 +45,8 @@ export default {
     setHeaderBanner(data) {
       this.header_banner = data;
     },
-    logMe(e){
-      alert(e);
+    logMe(e) {
+      console.log(e);
     }
   },
   // dipanggil saat pertama kali view dirender
