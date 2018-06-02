@@ -4,6 +4,7 @@
       <div class="card">
         <div class="card-header">
           <h5 class="card-title">{{ app_title }} {{ app_version }}</h5>
+          <p class="text-muted small mb-0">made with Vue.js</p>
         </div>
         <div class="card-body">
           <screen
@@ -28,7 +29,7 @@ import Keypad from "./Keypad";
 
 export default {
   name: "Content",
-  props: ["app_title", "app_version", "optional"],
+  props: ["app_title", "app_version"],
   components: {
     screen: Screen,
     keypad: Keypad

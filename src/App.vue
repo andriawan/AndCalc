@@ -1,11 +1,9 @@
 <template>
 <div class="container">
   <div id="app">
-    <AndHeader :banner="header_banner" :sub_banner="sub_header_banner">
-    </AndHeader>
-    <AndContent :optional="digit" :app_title="app.name" :app_version="app.version">
+    <AndContent :app_title="app.name" :app_version="app.version">
     </AndContent>
-    <AndFooter @transfer="logMe" :banner="footer_banner" :link="footer_link">
+    <AndFooter :banner="footer_banner" :link="footer_link">
     </AndFooter>
   </div>
 </div>
@@ -45,9 +43,6 @@ export default {
     setHeaderBanner(data) {
       this.header_banner = data;
     },
-    logMe(e) {
-      console.log(e);
-    }
   },
   // dipanggil saat pertama kali view dirender
   mounted() {

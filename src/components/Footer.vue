@@ -1,7 +1,9 @@
 <template>
   <div class="footer fixed">
     <p class="text-muted small mb-0">{{ banner }}</p>
-    <p class="text-muted small mb-0">{{ link }}</p>
+    <p class="text-muted small mb-0">
+      <a :href="link">{{ link }}</a>
+    </p>
   </div>
 </template>
 
@@ -12,14 +14,7 @@ export default {
   data() {
     return {};
   },
-  methods:{
-    transfer() {
-      this.$emit("transfer", "test");
-    }
-  },
-  mounted(){
-    this.transfer();
-  }
+  methods: {},
 };
 </script>
 
